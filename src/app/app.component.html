@@ -1,0 +1,55 @@
+<mat-sidenav-container class="main-container mat-app-background" [autosize]="isAutoSizeSideNav">
+  <mat-sidenav #startnav role="directory" mode="side" [(opened)]="isStartNavOpen" (disableClose)="true">
+
+    <mat-card class="m5">
+      <mat-card-header>
+        <mat-card-title>Credentials</mat-card-title>
+      </mat-card-header>
+
+      <form [formGroup]="tokenForm" (ngSubmit)="getToken()">
+        <mat-error *ngIf="isErrFromToken">
+          The username and password were not recognised
+        </mat-error>
+        <mat-form-field class="w100">
+          <input matInput placeholder="Email" formControlName="username" required autocomplete="username">
+          <mat-error>
+            Please provide a valid username
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="w100">
+          <input matInput type="password" placeholder="Password" autocomplete="current-password"
+            formControlName="password" required>
+          <mat-error>
+            Please provide a valid password
+          </mat-error>
+        </mat-form-field>
+        <button class="w100" mat-raised-button color="primary">Get Token</button>
+      </form>
+
+
+      <mat-form-field appearance="outline" class="w100 mt10">
+        <mat-label>Token</mat-label>
+        <textarea class="w100" [(ngModel)]="token" matInput></textarea>
+      </mat-form-field>
+    </mat-card>
+
+  </mat-sidenav>
+  <mat-sidenav-content role="main" class="m-5">
+
+    <mat-toolbar color="primary">
+      <button mat-icon-button (click)="startnav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>Expert.ai Vis</span>
+      <span class="spacer"></span>
+      <button mat-icon-button (click)="endnav.toggle()">
+        <mat-icon *ngIf="isEndNavOpen">chevron_right</mat-icon>
+        <mat-icon *ngIf="!isEndNavOpen">chevron_left</mat-icon>
+      </button>
+    </mat-toolbar>
+  </mat-sidenav-content>
+
+  <mat-sidenav class="end-sidenav" #endnav [(opened)]="isEndNavOpen" mode="side" position="end">
+    End content
+  </mat-sidenav>
+</mat-sidenav-container>

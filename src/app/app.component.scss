@@ -1,0 +1,35 @@
+.main-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.end-sidenav {
+  width: 50vw;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.m5 {
+  margin: 5px;
+}
+
+.mt10 {
+  margin-top: 10px;
+}
+
+mat-form-field {
+  margin-right: 6px;
+}
+
+div.mat-form-field-wrapper {
+  padding-bottom: 0;
+}
+
+.w100 {
+  width: 100%;
+}

@@ -7,9 +7,6 @@ export class ApiClientService {
 
   constructor() { }
 
-  private _token = '';
-
-  private _errLogger = (err: any) => { console.log('err: ', err); }
 
   token(username: string, password: string) {
     const myHeaders = new Headers();
@@ -23,17 +20,12 @@ export class ApiClientService {
       body: raw,
       redirect: 'follow'
     };
-    return fetch('https://developer.expert.ai/oauth2/token', requestOptions)
-      .then(response => response.text())
-      .then((result) => {
-        this._token = result;
-      }, this._errLogger)
-      .catch(this._errLogger);
+    return fetch('https://developer.expert.ai/oauth2/token', requestOptions);
   }
 
-  analyzeFull(txt: string) {
+  analyzeFull(txt: string, token: string) {
     const myHeaders = new Headers();
-    myHeaders.append('Authorization', 'Bearer ' + this._token);
+    myHeaders.append('Authorization', 'Bearer ' + token);
     myHeaders.append('Content-Type', 'application/json');
 
     const raw = JSON.stringify({ document: { text: txt } });
@@ -45,15 +37,12 @@ export class ApiClientService {
       redirect: 'follow'
     };
 
-    return fetch('https://nlapi.expert.ai/v2/analyze/standard/en', requestOptions)
-      .then(response => response.text())
-      .then(result => console.log(result))
-      .catch(this._errLogger);
+    return fetch('https://nlapi.expert.ai/v2/analyze/standard/en', requestOptions);
   }
 
-  analyzeDisambiguation(txt: string) {
+  analyzeDisambiguation(txt: string, token: string) {
     const myHeaders = new Headers();
-    myHeaders.append('Authorization', 'Bearer ' + this._token);
+    myHeaders.append('Authorization', 'Bearer ' + token);
     myHeaders.append('Content-Type', 'application/json');
 
     const raw = JSON.stringify({ document: { text: txt } });
@@ -65,9 +54,6 @@ export class ApiClientService {
       redirect: 'follow'
     };
 
-    return fetch('https://nlapi.expert.ai/v2/analyze/standard/en/disambiguation', requestOptions)
-      .then(response => response.text())
-      .then(result => console.log(result))
-      .catch(this._errLogger);
+    return fetch('https://nlapi.expert.ai/v2/analyze/standard/en/disambiguation', requestOptions);
   }
 }
