@@ -87,6 +87,14 @@
         <mat-icon *ngIf="!isEndNavOpen">chevron_left</mat-icon>
       </button> -->
     </mat-toolbar>
+
+    <div class="container">
+      <div id="cy">
+      </div>
+    </div>
+    <div *ngIf="isLoading" class="spinner-container">
+      <mat-spinner [diameter]="500"></mat-spinner>
+    </div>
   </mat-sidenav-content>
 
   <!-- <mat-sidenav class="end-sidenav" #endnav [(opened)]="isEndNavOpen" mode="side" position="end">
