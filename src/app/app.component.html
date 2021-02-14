@@ -1,55 +1,95 @@
-<mat-sidenav-container class="main-container mat-app-background" [autosize]="isAutoSizeSideNav">
+<mat-sidenav-container class="main-container mat-app-background">
   <mat-sidenav #startnav role="directory" mode="side" [(opened)]="isStartNavOpen" (disableClose)="true">
 
-    <mat-card class="m5">
-      <mat-card-header>
-        <mat-card-title>Credentials</mat-card-title>
-      </mat-card-header>
-
-      <form [formGroup]="tokenForm" (ngSubmit)="getToken()">
-        <mat-error *ngIf="isErrFromToken">
-          The username and password were not recognised
-        </mat-error>
-        <mat-form-field class="w100">
-          <input matInput placeholder="Email" formControlName="username" required autocomplete="username">
-          <mat-error>
-            Please provide a valid username
+    <mat-accordion class="m5" [multi]="true">
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Authentication
+          </mat-panel-title>
+          <mat-panel-description>
+            {{promptAuth}}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <form [formGroup]="tokenForm" (ngSubmit)="getToken()">
+          <mat-error *ngIf="isErrFromToken">
+            The username and password were not recognised
           </mat-error>
+          <mat-form-field class="w100">
+            <input matInput placeholder="Email" formControlName="username" required autocomplete="username">
+            <mat-error>
+              Please provide a valid username
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field class="w100">
+            <input matInput type="password" placeholder="Password" autocomplete="current-password"
+              formControlName="password" required>
+            <mat-error>
+              Please provide a valid password
+            </mat-error>
+          </mat-form-field>
+          <button class="w100" mat-raised-button color="primary">Get Token</button>
+        </form>
+        <mat-form-field appearance="outline" class="w100 mt10">
+          <mat-label>Token</mat-label>
+          <textarea rows="3" class="w100" [(ngModel)]="token" (click)="getToken()" matInput></textarea>
         </mat-form-field>
-        <mat-form-field class="w100">
-          <input matInput type="password" placeholder="Password" autocomplete="current-password"
-            formControlName="password" required>
-          <mat-error>
-            Please provide a valid password
-          </mat-error>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Text
+          </mat-panel-title>
+          <mat-panel-description>
+            Enter text for analysis
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <mat-form-field appearance="outline" class="w100 mt10">
+          <mat-label>Text to analyze</mat-label>
+          <textarea rows="10" class="w100" [(ngModel)]="txt2Analyze" matInput></textarea>
         </mat-form-field>
-        <button class="w100" mat-raised-button color="primary">Get Token</button>
-      </form>
+      </mat-expansion-panel>
 
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Document Analysis & Clasification
+          </mat-panel-title>
+          <mat-panel-description>
 
-      <mat-form-field appearance="outline" class="w100 mt10">
-        <mat-label>Token</mat-label>
-        <textarea class="w100" [(ngModel)]="token" matInput></textarea>
-      </mat-form-field>
-    </mat-card>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <div>
+          <div>
+            <mat-checkbox [(ngModel)]="isFullDocAnalysis">Full document analysis</mat-checkbox>
+          </div>
+
+          <button class="w100 m5" mat-raised-button color="primary" (click)="queryApi()">Query API</button>
+        </div>
+      </mat-expansion-panel>
+
+      <div class="fit-content">
+        <app-json2-tree *ngIf="apiResponse" [root]="apiResponse"></app-json2-tree>
+      </div>
+    </mat-accordion>
 
   </mat-sidenav>
   <mat-sidenav-content role="main" class="m-5">
-
     <mat-toolbar color="primary">
       <button mat-icon-button (click)="startnav.toggle()">
         <mat-icon>menu</mat-icon>
       </button>
       <span>Expert.ai Vis</span>
       <span class="spacer"></span>
-      <button mat-icon-button (click)="endnav.toggle()">
+      <!-- <button mat-icon-button (click)="endnav.toggle()">
         <mat-icon *ngIf="isEndNavOpen">chevron_right</mat-icon>
         <mat-icon *ngIf="!isEndNavOpen">chevron_left</mat-icon>
-      </button>
+      </button> -->
     </mat-toolbar>
   </mat-sidenav-content>
 
-  <mat-sidenav class="end-sidenav" #endnav [(opened)]="isEndNavOpen" mode="side" position="end">
+  <!-- <mat-sidenav class="end-sidenav" #endnav [(opened)]="isEndNavOpen" mode="side" position="end">
     End content
-  </mat-sidenav>
+  </mat-sidenav> -->
 </mat-sidenav-container>

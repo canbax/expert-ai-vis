@@ -1,0 +1,28 @@
+<div class="root" *ngIf="root">
+  <!-- show or hide the children of this node -->
+  <span>
+    <span *ngIf="root.children && root.children.length > 0" (click)="isShowChildren=!isShowChildren">
+      <button mat-icon-button>
+        <mat-icon class="mat-icon-rtl-mirror">
+          {{isShowChildren ? 'expand_more' : 'chevron_right'}}
+        </mat-icon>
+      </button>
+    </span>
+    <ng-container *ngIf="root.children && root.children.length > 1"> <b>{{root.name}}</b> </ng-container>
+    <ng-container *ngIf="root.children && root.children.length == 1"> <b>{{root.name}}:&nbsp; </b> </ng-container>
+  </span>
+
+  <!-- <span [style.display]="isShowChildren ? 'block' : 'none'"> -->
+  <span *ngIf="isShowChildren">
+    <ng-container *ngIf="root.children && root.children.length > 1">
+      <ul *ngFor="let node of root.children;">
+        <li>
+          <app-json2-tree [root]="node"> </app-json2-tree>
+        </li>
+      </ul>
+    </ng-container>
+    <ng-container *ngIf="root.children && root.children.length == 1">
+      <span class="w-text">{{root.children[0].name}}</span>
+    </ng-container>
+  </span>
+</div>

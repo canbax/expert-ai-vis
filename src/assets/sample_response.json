@@ -1,0 +1,1462 @@
+
+{
+  "data": {
+    "content": "Michael Jordan was one of the best basketball players of all time. Scoring was Jordan's stand-out skill, but he still holds a defensive NBA record, with eight steals in a half.",
+    "entities": [
+      {
+        "attributes": [
+          {
+            "attribute": "gender",
+            "lemma": "male",
+            "syncon": -1,
+            "type": ""
+          },
+          {
+            "attribute": "role",
+            "lemma": "person",
+            "syncon": 73282,
+            "type": "nph"
+          }
+        ],
+        "lemma": "Michael Jordan",
+        "positions": [
+          {
+            "end": 14,
+            "start": 0
+          },
+          {
+            "end": 85,
+            "start": 79
+          },
+          {
+            "end": 111,
+            "start": 109
+          }
+        ],
+        "relevance": 15,
+        "syncon": -1,
+        "type": "NPH"
+      },
+      {
+        "attributes": [
+          {
+            "attribute": "role",
+            "lemma": "league",
+            "syncon": 36253,
+            "type": "org"
+          }
+        ],
+        "lemma": "National Basketball Association",
+        "positions": [
+          {
+            "end": 139,
+            "start": 136
+          }
+        ],
+        "relevance": 10,
+        "syncon": 206693,
+        "type": "ORG"
+      }
+    ],
+    "knowledge": [
+      {
+        "label": "event.outcome",
+        "properties": [
+          {
+            "type": "WikiDataId",
+            "value": "Q1241356"
+          }
+        ],
+        "syncon": 102
+      },
+      {
+        "label": "action",
+        "properties": [
+          {
+            "type": "WikiDataId",
+            "value": "Q522344"
+          }
+        ],
+        "syncon": 628
+      },
+      {
+        "label": "quality.human_feature",
+        "properties": [
+          {
+            "type": "WikiDataId",
+            "value": "Q205961"
+          }
+        ],
+        "syncon": 25683
+      },
+      {
+        "label": "person.basketball_player",
+        "properties": [
+          {
+            "type": "WikiDataId",
+            "value": "Q3665646"
+          }
+        ],
+        "syncon": 41583
+      },
+      {
+        "label": "object_group.property",
+        "syncon": 54375
+      },
+      {
+        "label": "component.object_part",
+        "syncon": 56504
+      },
+      {
+        "label": "time",
+        "syncon": 73451
+      },
+      {
+        "label": "other",
+        "syncon": 86973
+      },
+      {
+        "label": "other",
+        "syncon": 87205
+      },
+      {
+        "label": "event.happening",
+        "syncon": 111950
+      },
+      {
+        "label": "other",
+        "syncon": 160458
+      },
+      {
+        "label": "organization.sport_association",
+        "properties": [
+          {
+            "type": "DBpediaId",
+            "value": "dbpedia.org/page/National_Basketball_Association"
+          },
+          {
+            "type": "WikiDataId",
+            "value": "Q155223"
+          }
+        ],
+        "syncon": 206693
+      },
+      {
+        "label": "other",
+        "syncon": 220448
+      }
+    ],
+    "language": "en",
+    "mainLemmas": [
+      {
+        "positions": [
+          {
+            "end": 14,
+            "start": 0
+          },
+          {
+            "end": 85,
+            "start": 79
+          },
+          {
+            "end": 111,
+            "start": 109
+          }
+        ],
+        "score": 23.39,
+        "value": "Michael Jordan"
+      },
+      {
+        "positions": [
+          {
+            "end": 139,
+            "start": 136
+          }
+        ],
+        "score": 21.0,
+        "value": "National Basketball Association"
+      },
+      {
+        "positions": [
+          {
+            "end": 103,
+            "start": 98
+          }
+        ],
+        "score": 11.8,
+        "value": "skill"
+      },
+      {
+        "positions": [
+          {
+            "end": 53,
+            "start": 35
+          }
+        ],
+        "score": 9.69,
+        "value": "basketball player"
+      },
+      {
+        "positions": [
+          {
+            "end": 146,
+            "start": 140
+          }
+        ],
+        "score": 7.8,
+        "value": "record"
+      },
+      {
+        "positions": [
+          {
+            "end": 97,
+            "start": 88
+          }
+        ],
+        "score": 7.69,
+        "value": "stand-out"
+      },
+      {
+        "positions": [
+          {
+            "end": 74,
+            "start": 67
+          }
+        ],
+        "score": 7.59,
+        "value": "scoring"
+      }
+    ],
+    "mainPhrases": [
+      {
+        "positions": [
+          {
+            "end": 146,
+            "start": 136
+          }
+        ],
+        "score": 80.4,
+        "value": "NBA record"
+      },
+      {
+        "positions": [
+          {
+            "end": 175,
+            "start": 159
+          }
+        ],
+        "score": 8.69,
+        "value": "steals in a half"
+      },
+      {
+        "positions": [
+          {
+            "end": 53,
+            "start": 30
+          },
+          {
+            "end": 53,
+            "start": 30
+          }
+        ],
+        "score": 8.69,
+        "value": "best basketball players"
+      },
+      {
+        "positions": [
+          {
+            "end": 146,
+            "start": 126
+          }
+        ],
+        "score": 2.0,
+        "value": "defensive NBA record"
+      },
+      {
+        "positions": [
+          {
+            "end": 146,
+            "start": 118
+          }
+        ],
+        "score": 0.0,
+        "value": "hold a defensive NBA record"
+      }
+    ],
+    "mainSentences": [
+      {
+        "end": 176,
+        "score": 70.5,
+        "start": 67,
+        "value": "Scoring was Jordan's stand-out skill, but he still holds a defensive NBA record, with eight steals in a half."
+      },
+      {
+        "end": 66,
+        "score": 29.39,
+        "start": 0,
+        "value": "Michael Jordan was one of the best basketball players of all time."
+      }
+    ],
+    "mainSyncons": [
+      {
+        "lemma": "National Basketball Association",
+        "positions": [
+          {
+            "end": 139,
+            "start": 136
+          }
+        ],
+        "score": 20.1,
+        "syncon": 206693
+      },
+      {
+        "lemma": "skill",
+        "positions": [
+          {
+            "end": 103,
+            "start": 98
+          }
+        ],
+        "score": 11.5,
+        "syncon": 25683
+      },
+      {
+        "lemma": "basketball player",
+        "positions": [
+          {
+            "end": 53,
+            "start": 35
+          }
+        ],
+        "score": 9.19,
+        "syncon": 41583
+      },
+      {
+        "lemma": "record",
+        "positions": [
+          {
+            "end": 146,
+            "start": 140
+          }
+        ],
+        "score": 8.1,
+        "syncon": 102
+      },
+      {
+        "lemma": "scoring",
+        "positions": [
+          {
+            "end": 74,
+            "start": 67
+          }
+        ],
+        "score": 7.69,
+        "syncon": 628
+      },
+      {
+        "lemma": "standout",
+        "positions": [
+          {
+            "end": 97,
+            "start": 88
+          }
+        ],
+        "score": 7.4,
+        "syncon": 111950
+      },
+      {
+        "lemma": "buy",
+        "positions": [
+          {
+            "end": 165,
+            "start": 159
+          }
+        ],
+        "score": 6.09,
+        "syncon": 54375
+      },
+      {
+        "lemma": "half",
+        "positions": [
+          {
+            "end": 175,
+            "start": 171
+          }
+        ],
+        "score": 3.7,
+        "syncon": 56504
+      },
+      {
+        "lemma": "time",
+        "positions": [
+          {
+            "end": 65,
+            "start": 61
+          }
+        ],
+        "score": 1.2,
+        "syncon": 73451
+      },
+      {
+        "lemma": "adept",
+        "positions": [
+          {
+            "end": 34,
+            "start": 30
+          }
+        ],
+        "score": 0.3,
+        "syncon": 86973
+      },
+      {
+        "lemma": "defending",
+        "positions": [
+          {
+            "end": 135,
+            "start": 126
+          }
+        ],
+        "score": 0.3,
+        "syncon": 220448
+      },
+      {
+        "lemma": "all",
+        "positions": [
+          {
+            "end": 60,
+            "start": 57
+          }
+        ],
+        "score": 0.1,
+        "syncon": 87205
+      }
+    ],
+    "paragraphs": [
+      {
+        "end": 176,
+        "sentences": [
+          0,
+          1
+        ],
+        "start": 0
+      }
+    ],
+    "phrases": [
+      {
+        "end": 14,
+        "start": 0,
+        "tokens": [
+          0
+        ],
+        "type": "NP"
+      },
+      {
+        "end": 22,
+        "start": 15,
+        "tokens": [
+          1,
+          2
+        ],
+        "type": "PN"
+      },
+      {
+        "end": 53,
+        "start": 23,
+        "tokens": [
+          3,
+          4,
+          5,
+          6
+        ],
+        "type": "PP"
+      },
+      {
+        "end": 65,
+        "start": 54,
+        "tokens": [
+          7,
+          8,
+          9
+        ],
+        "type": "PP"
+      },
+      {
+        "end": 66,
+        "start": 65,
+        "tokens": [
+          10
+        ],
+        "type": "NA"
+      },
+      {
+        "end": 74,
+        "start": 67,
+        "tokens": [
+          11
+        ],
+        "type": "NP"
+      },
+      {
+        "end": 103,
+        "start": 75,
+        "tokens": [
+          12,
+          13,
+          14,
+          15,
+          16
+        ],
+        "type": "PN"
+      },
+      {
+        "end": 104,
+        "start": 103,
+        "tokens": [
+          17
+        ],
+        "type": "NA"
+      },
+      {
+        "end": 108,
+        "start": 105,
+        "tokens": [
+          18
+        ],
+        "type": "CP"
+      },
+      {
+        "end": 111,
+        "start": 109,
+        "tokens": [
+          19
+        ],
+        "type": "NP"
+      },
+      {
+        "end": 123,
+        "start": 112,
+        "tokens": [
+          20,
+          21
+        ],
+        "type": "VP"
+      },
+      {
+        "end": 146,
+        "start": 124,
+        "tokens": [
+          22,
+          23,
+          24,
+          25
+        ],
+        "type": "NP"
+      },
+      {
+        "end": 147,
+        "start": 146,
+        "tokens": [
+          26
+        ],
+        "type": "NA"
+      },
+      {
+        "end": 165,
+        "start": 148,
+        "tokens": [
+          27,
+          28,
+          29
+        ],
+        "type": "PP"
+      },
+      {
+        "end": 175,
+        "start": 166,
+        "tokens": [
+          30,
+          31,
+          32
+        ],
+        "type": "PP"
+      },
+      {
+        "end": 176,
+        "start": 175,
+        "tokens": [
+          33
+        ],
+        "type": "NA"
+      },
+      {
+        "end": 176,
+        "start": 176,
+        "tokens": [],
+        "type": "CR"
+      }
+    ],
+    "relations": [
+      {
+        "related": [
+          {
+            "lemma": "Michael Jordan",
+            "phrase": 9,
+            "relation": "sbj_who",
+            "relevance": 8,
+            "syncon": -1,
+            "text": "he",
+            "type": "NPH"
+          }
+        ],
+        "verb": {
+          "lemma": "be",
+          "phrase": 1,
+          "relevance": 9,
+          "syncon": 72504,
+          "text": "was one",
+          "type": "CPL"
+        }
+      },
+      {
+        "related": [
+          {
+            "lemma": "scoring",
+            "phrase": 5,
+            "relation": "sbj_what",
+            "relevance": 2,
+            "syncon": 628,
+            "text": "Scoring",
+            "type": ""
+          },
+          {
+            "lemma": "skill",
+            "phrase": 6,
+            "relation": "is_what",
+            "relevance": 15,
+            "syncon": 25683,
+            "text": "was Jordan's stand-out skill",
+            "type": ""
+          }
+        ],
+        "verb": {
+          "lemma": "be",
+          "phrase": 6,
+          "relevance": 15,
+          "syncon": 72504,
+          "text": "was Jordan's stand-out skill",
+          "type": "CPL"
+        }
+      },
+      {
+        "related": [
+          {
+            "lemma": "still",
+            "phrase": 10,
+            "relation": "when",
+            "relevance": 10,
+            "syncon": 157871,
+            "text": "still holds",
+            "type": ""
+          },
+          {
+            "lemma": "Michael Jordan",
+            "phrase": 9,
+            "relation": "sbj_who",
+            "relevance": 8,
+            "syncon": -1,
+            "text": "he",
+            "type": "NPH"
+          },
+          {
+            "lemma": "record",
+            "phrase": 11,
+            "relation": "obj_what",
+            "relevance": 10,
+            "syncon": 102,
+            "text": "a defensive NBA record",
+            "type": ""
+          },
+          {
+            "lemma": "half",
+            "phrase": 14,
+            "relation": "in_what",
+            "relevance": 1,
+            "syncon": 56504,
+            "text": "in a half",
+            "type": ""
+          },
+          {
+            "lemma": "steal",
+            "phrase": 13,
+            "relation": "with_what",
+            "relevance": 1,
+            "syncon": 54375,
+            "text": "with eight steals",
+            "type": ""
+          }
+        ],
+        "verb": {
+          "lemma": "hold",
+          "phrase": 10,
+          "relevance": 10,
+          "syncon": 72760,
+          "text": "still holds",
+          "type": ""
+        }
+      }
+    ],
+    "sentences": [
+      {
+        "end": 66,
+        "phrases": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "start": 0
+      },
+      {
+        "end": 176,
+        "phrases": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16
+        ],
+        "start": 67
+      }
+    ],
+    "sentiment": {
+      "items": [
+        {
+          "items": [
+            {
+              "lemma": "but",
+              "sentiment": -1.0,
+              "syncon": 160458
+            },
+            {
+              "lemma": "steal",
+              "sentiment": 6.0,
+              "syncon": 54375
+            }
+          ],
+          "lemma": "",
+          "sentiment": 5.0,
+          "syncon": -1
+        },
+        {
+          "items": [
+            {
+              "lemma": "good",
+              "sentiment": 5.0,
+              "syncon": 86973
+            }
+          ],
+          "lemma": "basketball player",
+          "sentiment": 5.0,
+          "syncon": 41583
+        },
+        {
+          "items": [
+            {
+              "lemma": "stand-out;skill",
+              "sentiment": 9.5,
+              "syncon": 111950
+            }
+          ],
+          "lemma": "scoring",
+          "sentiment": 9.5,
+          "syncon": 628
+        },
+        {
+          "items": [
+            {
+              "lemma": "scoring",
+              "sentiment": 3.5,
+              "syncon": 628
+            }
+          ],
+          "lemma": "skill",
+          "sentiment": 3.5,
+          "syncon": 25683
+        }
+      ],
+      "negativity": 0.0,
+      "overall": 15.3,
+      "positivity": 15.3
+    },
+    "tokens": [
+      {
+        "atoms": [
+          {
+            "end": 7,
+            "lemma": "Michael",
+            "start": 0,
+            "type": "NPR.NPH"
+          },
+          {
+            "end": 14,
+            "lemma": "Jordan",
+            "start": 8,
+            "type": "NPR.NPH"
+          }
+        ],
+        "dependency": {
+          "head": 2,
+          "id": 0,
+          "label": "nsubj"
+        },
+        "end": 14,
+        "lemma": "Michael Jordan",
+        "morphology": "Gender=Masc|Number=Sing",
+        "paragraph": 0,
+        "phrase": 0,
+        "pos": "PROPN",
+        "sentence": 0,
+        "start": 0,
+        "syncon": -1,
+        "type": "NPR.NPH",
+        "vsyn": {
+          "id": -436162,
+          "parent": 73282
+        }
+      },
+      {
+        "dependency": {
+          "head": 2,
+          "id": 1,
+          "label": "cop"
+        },
+        "end": 18,
+        "lemma": "be",
+        "morphology": "Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin",
+        "paragraph": 0,
+        "phrase": 1,
+        "pos": "AUX",
+        "sentence": 0,
+        "start": 15,
+        "syncon": 72504,
+        "type": "VER"
+      },
+      {
+        "dependency": {
+          "head": 2,
+          "id": 2,
+          "label": "root"
+        },
+        "end": 22,
+        "lemma": "one",
+        "morphology": "Number=Sing|NumType=Card",
+        "paragraph": 0,
+        "phrase": 1,
+        "pos": "NUM",
+        "sentence": 0,
+        "start": 19,
+        "syncon": -1,
+        "type": "PRO"
+      },
+      {
+        "dependency": {
+          "head": 6,
+          "id": 3,
+          "label": "case"
+        },
+        "end": 25,
+        "lemma": "of",
+        "paragraph": 0,
+        "phrase": 2,
+        "pos": "ADP",
+        "sentence": 0,
+        "start": 23,
+        "syncon": -1,
+        "type": "PRE"
+      },
+      {
+        "dependency": {
+          "head": 6,
+          "id": 4,
+          "label": "det"
+        },
+        "end": 29,
+        "lemma": "the",
+        "morphology": "Definite=Def|PronType=Art",
+        "paragraph": 0,
+        "phrase": 2,
+        "pos": "DET",
+        "sentence": 0,
+        "start": 26,
+        "syncon": -1,
+        "type": "ART"
+      },
+      {
+        "dependency": {
+          "head": 6,
+          "id": 5,
+          "label": "amod"
+        },
+        "end": 34,
+        "lemma": "good",
+        "morphology": "Degree=Sup",
+        "paragraph": 0,
+        "phrase": 2,
+        "pos": "ADJ",
+        "sentence": 0,
+        "start": 30,
+        "syncon": 86973,
+        "type": "ADJ"
+      },
+      {
+        "atoms": [
+          {
+            "end": 45,
+            "lemma": "basketball",
+            "start": 35,
+            "type": "NOU"
+          },
+          {
+            "end": 53,
+            "lemma": "player",
+            "start": 46,
+            "type": "NOU"
+          }
+        ],
+        "dependency": {
+          "head": 2,
+          "id": 6,
+          "label": "nmod"
+        },
+        "end": 53,
+        "lemma": "basketball player",
+        "morphology": "Number=Plur",
+        "paragraph": 0,
+        "phrase": 2,
+        "pos": "NOUN",
+        "sentence": 0,
+        "start": 35,
+        "syncon": 41583,
+        "type": "NOU"
+      },
+      {
+        "dependency": {
+          "head": 9,
+          "id": 7,
+          "label": "case"
+        },
+        "end": 56,
+        "lemma": "of",
+        "paragraph": 0,
+        "phrase": 3,
+        "pos": "ADP",
+        "sentence": 0,
+        "start": 54,
+        "syncon": -1,
+        "type": "PRE"
+      },
+      {
+        "dependency": {
+          "head": 9,
+          "id": 8,
+          "label": "det"
+        },
+        "end": 60,
+        "lemma": "all",
+        "paragraph": 0,
+        "phrase": 3,
+        "pos": "DET",
+        "sentence": 0,
+        "start": 57,
+        "syncon": 87205,
+        "type": "ADJ"
+      },
+      {
+        "dependency": {
+          "head": 6,
+          "id": 9,
+          "label": "nmod"
+        },
+        "end": 65,
+        "lemma": "time",
+        "morphology": "Number=Sing",
+        "paragraph": 0,
+        "phrase": 3,
+        "pos": "NOUN",
+        "sentence": 0,
+        "start": 61,
+        "syncon": 73451,
+        "type": "NOU"
+      },
+      {
+        "dependency": {
+          "head": 2,
+          "id": 10,
+          "label": "punct"
+        },
+        "end": 66,
+        "lemma": ".",
+        "paragraph": 0,
+        "phrase": 4,
+        "pos": "PUNCT",
+        "sentence": 0,
+        "start": 65,
+        "syncon": -1,
+        "type": "PNT"
+      },
+      {
+        "dependency": {
+          "head": 16,
+          "id": 11,
+          "label": "nsubj"
+        },
+        "end": 74,
+        "lemma": "scoring",
+        "morphology": "Number=Sing",
+        "paragraph": 0,
+        "phrase": 5,
+        "pos": "NOUN",
+        "sentence": 1,
+        "start": 67,
+        "syncon": 628,
+        "type": "NOU"
+      },
+      {
+        "dependency": {
+          "head": 16,
+          "id": 12,
+          "label": "cop"
+        },
+        "end": 78,
+        "lemma": "be",
+        "morphology": "Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin",
+        "paragraph": 0,
+        "phrase": 6,
+        "pos": "AUX",
+        "sentence": 1,
+        "start": 75,
+        "syncon": 72504,
+        "type": "VER"
+      },
+      {
+        "atoms": [
+          {
+            "end": 85,
+            "lemma": "Jordan",
+            "start": 79,
+            "type": "NPR.NPH"
+          }
+        ],
+        "dependency": {
+          "head": 16,
+          "id": 13,
+          "label": "nmod"
+        },
+        "end": 85,
+        "lemma": "Michael Jordan",
+        "morphology": "Gender=Masc|Number=Sing",
+        "paragraph": 0,
+        "phrase": 6,
+        "pos": "PROPN",
+        "sentence": 1,
+        "start": 79,
+        "syncon": -1,
+        "type": "NPR.NPH",
+        "vsyn": {
+          "id": -436162,
+          "parent": 73282
+        }
+      },
+      {
+        "dependency": {
+          "head": 13,
+          "id": 14,
+          "label": "case"
+        },
+        "end": 87,
+        "lemma": "'s",
+        "paragraph": 0,
+        "phrase": 6,
+        "pos": "PART",
+        "sentence": 1,
+        "start": 85,
+        "syncon": -1,
+        "type": "PNT"
+      },
+      {
+        "atoms": [
+          {
+            "end": 93,
+            "lemma": "stand",
+            "start": 88,
+            "type": "NOU"
+          },
+          {
+            "end": 94,
+            "lemma": "-",
+            "start": 93,
+            "type": "PNT"
+          },
+          {
+            "end": 97,
+            "lemma": "out",
+            "start": 94,
+            "type": "NOU"
+          }
+        ],
+        "dependency": {
+          "head": 16,
+          "id": 15,
+          "label": "compound"
+        },
+        "end": 97,
+        "lemma": "stand-out",
+        "morphology": "Number=Sing",
+        "paragraph": 0,
+        "phrase": 6,
+        "pos": "NOUN",
+        "sentence": 1,
+        "start": 88,
+        "syncon": 111950,
+        "type": "NOU"
+      },
+      {
+        "dependency": {
+          "head": 16,
+          "id": 16,
+          "label": "root"
+        },
+        "end": 103,
+        "lemma": "skill",
+        "morphology": "Number=Sing",
+        "paragraph": 0,
+        "phrase": 6,
+        "pos": "NOUN",
+        "sentence": 1,
+        "start": 98,
+        "syncon": 25683,
+        "type": "NOU"
+      },
+      {
+        "dependency": {
+          "head": 16,
+          "id": 17,
+          "label": "punct"
+        },
+        "end": 104,
+        "lemma": ",",
+        "paragraph": 0,
+        "phrase": 7,
+        "pos": "PUNCT",
+        "sentence": 1,
+        "start": 103,
+        "syncon": -1,
+        "type": "PNT"
+      },
+      {
+        "dependency": {
+          "head": 21,
+          "id": 18,
+          "label": "cc"
+        },
+        "end": 108,
+        "lemma": "but",
+        "paragraph": 0,
+        "phrase": 8,
+        "pos": "CCONJ",
+        "sentence": 1,
+        "start": 105,
+        "syncon": 160458,
+        "type": "CON"
+      },
+      {
+        "dependency": {
+          "head": 21,
+          "id": 19,
+          "label": "nsubj"
+        },
+        "end": 111,
+        "lemma": "Michael Jordan",
+        "morphology": "Gender=Masc|Number=Sing|PronType=Prs|Case=Nom|Person=3",
+        "paragraph": 0,
+        "phrase": 9,
+        "pos": "PRON",
+        "sentence": 1,
+        "start": 109,
+        "syncon": -1,
+        "type": "PRO",
+        "vsyn": {
+          "id": -436162,
+          "parent": 73282
+        }
+      },
+      {
+        "dependency": {
+          "head": 21,
+          "id": 20,
+          "label": "advmod"
+        },
+        "end": 117,
+        "lemma": "still",
+        "paragraph": 0,
+        "phrase": 10,
+        "pos": "ADV",
+        "sentence": 1,
+        "start": 112,
+        "syncon": 157871,
+        "type": "ADV"
+      },
+      {
+        "dependency": {
+          "head": 16,
+          "id": 21,
+          "label": "conj"
+        },
+        "end": 123,
+        "lemma": "hold",
+        "morphology": "Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin",
+        "paragraph": 0,
+        "phrase": 10,
+        "pos": "VERB",
+        "sentence": 1,
+        "start": 118,
+        "syncon": 72760,
+        "type": "VER"
+      },
+      {
+        "dependency": {
+          "head": 25,
+          "id": 22,
+          "label": "det"
+        },
+        "end": 125,
+        "lemma": "a",
+        "morphology": "Definite=Ind|PronType=Art",
+        "paragraph": 0,
+        "phrase": 11,
+        "pos": "DET",
+        "sentence": 1,
+        "start": 124,
+        "syncon": -1,
+        "type": "ART"
+      },
+      {
+        "dependency": {
+          "head": 25,
+          "id": 23,
+          "label": "amod"
+        },
+        "end": 135,
+        "lemma": "defensive",
+        "paragraph": 0,
+        "phrase": 11,
+        "pos": "ADJ",
+        "sentence": 1,
+        "start": 126,
+        "syncon": 220448,
+        "type": "ADJ"
+      },
+      {
+        "dependency": {
+          "head": 25,
+          "id": 24,
+          "label": "compound"
+        },
+        "end": 139,
+        "lemma": "National Basketball Association",
+        "paragraph": 0,
+        "phrase": 11,
+        "pos": "PROPN",
+        "sentence": 1,
+        "start": 136,
+        "syncon": 206693,
+        "type": "NPR.ORG"
+      },
+      {
+        "dependency": {
+          "head": 21,
+          "id": 25,
+          "label": "obj"
+        },
+        "end": 146,
+        "lemma": "record",
+        "morphology": "Number=Sing",
+        "paragraph": 0,
+        "phrase": 11,
+        "pos": "NOUN",
+        "sentence": 1,
+        "start": 140,
+        "syncon": 102,
+        "type": "NOU"
+      },
+      {
+        "dependency": {
+          "head": 21,
+          "id": 26,
+          "label": "punct"
+        },
+        "end": 147,
+        "lemma": ",",
+        "paragraph": 0,
+        "phrase": 12,
+        "pos": "PUNCT",
+        "sentence": 1,
+        "start": 146,
+        "syncon": -1,
+        "type": "PNT"
+      },
+      {
+        "dependency": {
+          "head": 29,
+          "id": 27,
+          "label": "case"
+        },
+        "end": 152,
+        "lemma": "with",
+        "paragraph": 0,
+        "phrase": 13,
+        "pos": "ADP",
+        "sentence": 1,
+        "start": 148,
+        "syncon": -1,
+        "type": "PRE"
+      },
+      {
+        "dependency": {
+          "head": 29,
+          "id": 28,
+          "label": "nummod"
+        },
+        "end": 158,
+        "lemma": "eight",
+        "morphology": "NumType=Card",
+        "paragraph": 0,
+        "phrase": 13,
+        "pos": "NUM",
+        "sentence": 1,
+        "start": 153,
+        "syncon": -1,
+        "type": "ADJ"
+      },
+      {
+        "dependency": {
+          "head": 21,
+          "id": 29,
+          "label": "obl"
+        },
+        "end": 165,
+        "lemma": "steal",
+        "morphology": "Number=Plur",
+        "paragraph": 0,
+        "phrase": 13,
+        "pos": "NOUN",
+        "sentence": 1,
+        "start": 159,
+        "syncon": 54375,
+        "type": "NOU"
+      },
+      {
+        "dependency": {
+          "head": 32,
+          "id": 30,
+          "label": "case"
+        },
+        "end": 168,
+        "lemma": "in",
+        "paragraph": 0,
+        "phrase": 14,
+        "pos": "ADP",
+        "sentence": 1,
+        "start": 166,
+        "syncon": -1,
+        "type": "PRE"
+      },
+      {
+        "dependency": {
+          "head": 32,
+          "id": 31,
+          "label": "det"
+        },
+        "end": 170,
+        "lemma": "a",
+        "morphology": "Definite=Ind|PronType=Art",
+        "paragraph": 0,
+        "phrase": 14,
+        "pos": "DET",
+        "sentence": 1,
+        "start": 169,
+        "syncon": -1,
+        "type": "ART"
+      },
+      {
+        "dependency": {
+          "head": 21,
+          "id": 32,
+          "label": "obl"
+        },
+        "end": 175,
+        "lemma": "half",
+        "morphology": "Number=Sing",
+        "paragraph": 0,
+        "phrase": 14,
+        "pos": "NOUN",
+        "sentence": 1,
+        "start": 171,
+        "syncon": 56504,
+        "type": "NOU"
+      },
+      {
+        "dependency": {
+          "head": 16,
+          "id": 33,
+          "label": "punct"
+        },
+        "end": 176,
+        "lemma": ".",
+        "paragraph": 0,
+        "phrase": 15,
+        "pos": "PUNCT",
+        "sentence": 1,
+        "start": 175,
+        "syncon": -1,
+        "type": "PNT"
+      }
+    ],
+    "topics": [
+      {
+        "id": 265,
+        "label": "basketball",
+        "score": 10.89,
+        "winner": true
+      },
+      {
+        "id": 340,
+        "label": "sports",
+        "score": 6.59,
+        "winner": true
+      },
+      {
+        "id": 167,
+        "label": "games and toys",
+        "score": 0.3,
+        "winner": false
+      },
+      {
+        "id": 82,
+        "label": "trade",
+        "score": 0.1,
+        "winner": false
+      }
+    ],
+    "version": "sensei: 3.3.2; disambiguator: 15.0-QNTX-2016"
+  },
+  "success": true
+}
