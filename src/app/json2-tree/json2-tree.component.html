@@ -1,23 +1,31 @@
 <span class="root" *ngIf="root">
   <!-- show or hide the children of this node -->
-  <span *ngIf="root.children && root.children.length > 0" (click)="isShowChildren=!isShowChildren">
+  <span class="padded" *ngIf="root.children && root.children.length > 0" (click)="isShowChildren=!isShowChildren">
     <button mat-flat-button>
       <mat-icon class="mat-icon-rtl-mirror">
         {{isShowChildren ? 'expand_more' : 'chevron_right'}}
       </mat-icon>
       <b>{{root.name}}</b>
+      <b
+        *ngIf="isShowChildren && root.children && root.children.length == 1 && (!root.children[0].children || root.children[0].children.length == 0)">
+        : </b>
     </button>
-    <br *ngIf="root.children[0].children && root.children[0].children.length > 0">
   </span>
   <span *ngIf="!root.children || root.children.length == 0">
     {{root.name}}
   </span>
   <!-- <span [style.display]="isShowChildren ? 'block' : 'none'"> -->
-  <span *ngIf="isShowChildren">
-    <ng-container *ngIf="root.children && root.children.length > 0">
-      <span *ngFor="let node of root.children;">
+  <span *ngIf="isShowChildren && root.children && root.children.length > 0">
+    <span *ngFor="let node of root.children; let i = index;">
+      <span *ngIf="!node.children || node.children.length == 0;else std_li">
         <app-json2-tree [root]="node"> </app-json2-tree>
+        <br>
       </span>
-    </ng-container>
+      <ng-template #std_li>
+        <div class="p5">
+          <app-json2-tree [root]="node"> </app-json2-tree>
+        </div>
+      </ng-template>
+    </span>
   </span>
 </span>

@@ -38,7 +38,8 @@ export class Json2TreeComponent implements OnInit {
 
   @Input() root: TreeNode = { name: 'Response', children: [] };
   isShowChildren = true;
-
+  @Input() isLastChild: boolean;
+  
   constructor() {
   }
 
