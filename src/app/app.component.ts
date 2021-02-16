@@ -2,9 +2,10 @@ import { Component, HostListener, OnInit } from '@angular/core';
 import { ApiClientService } from './api-client.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { TreeNode } from './helper';
+import { CyNode, CY_STYLE, getFcoseOptions, TreeNode } from './helper';
 import cytoscape from 'cytoscape';
 import fcose from 'cytoscape-fcose';
+import expandCollapse from 'cytoscape-expand-collapse';
 
 @Component({
   selector: 'app-root',
@@ -42,11 +43,17 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    cytoscape.use(fcose);
+    //register expand-collapse extension
+    expandCollapse(cytoscape);
     this.cy = cytoscape({
       // style: GENERAL_CY_STYLE,
       container: document.getElementById('cy'),
       wheelSensitivity: 0.1,
+      style: CY_STYLE,
+      layout: getFcoseOptions()
     });
+    this.bindExpandCollapseExt();
     (window as any)['cy'] = this.cy;
   }
 
@@ -105,6 +112,8 @@ export class AppComponent implements OnInit {
         this.isLoading = false;
         if (v.ok) {
           this.apiResponse = this.json2Tree(JSON.parse(await v.text()), false);
+          this.tree2CyGraph(this.apiResponse);
+          this.cy.layout(getFcoseOptions()).run();
         } else {
           this._errLogger('Status: ' + v.status);
         }
@@ -136,9 +145,41 @@ export class AppComponent implements OnInit {
     return root;
   }
 
-  tree2CyGraph(root: TreeNode) {
-    if (root.children && root.children.length == 1) {
-      // this.cy.add({ data: { name: root.children[0].name } })
+  tree2CyGraph(root: TreeNode, parent?: any) {
+    if (!root) {
+      return;
     }
+    const p = parent ? parent.id() : null;
+    const n: CyNode = { data: { name: root.name, parent: p }, group: 'nodes' };
+    const cyEl = this.cy.add(n);
+    if (!root.children) {
+      return;
+    }
+    for (const ch of root.children) {
+      this.tree2CyGraph(ch, cyEl);
+    }
+  }
+
+  private bindExpandCollapseExt() {
+    const layout = getFcoseOptions();
+    layout.randomize = false;
+    this.expandCollapseApi = this.cy.expandCollapse({
+      layoutBy: layout,
+      // recommended usage: use cose-bilkent layout with randomize: false to preserve mental map upon expand/collapse
+      fisheye: false, // whether to perform fisheye view after expand/collapse you can specify a function too
+      animate: true, // whether to animate on drawing changes you can specify a function too
+      ready: function () { }, // callback when expand/collapse initialized
+      undoable: false, // and if undoRedoExtension exists,
+      randomize: false,
+
+      cueEnabled: true, // Whether cues are enabled
+      expandCollapseCuePosition: 'top-left',
+      expandCollapseCueSize: 12, // size of expand-collapse cue
+      expandCollapseCueLineSize: 8, // size of lines used for drawing plus-minus icons
+      expandCueImage: undefined, // image of expand icon if undefined draw regular expand cue
+      collapseCueImage: undefined, // image of collapse icon if undefined draw regular collapse cue
+      expandCollapseCueSensitivity: 1, // sensitivity of expand-collapse cues
+      allowNestedEdgeCollapse: false
+    });
   }
 }

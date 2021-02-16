@@ -76,24 +76,26 @@
 
   </mat-sidenav>
   <mat-sidenav-content role="main" class="m-5">
-    <mat-toolbar color="primary">
-      <button mat-icon-button (click)="startnav.toggle()">
-        <mat-icon>menu</mat-icon>
-      </button>
-      <span>Expert.ai Vis</span>
-      <span class="spacer"></span>
-      <!-- <button mat-icon-button (click)="endnav.toggle()">
+    <div class="root">
+      <mat-toolbar color="primary">
+        <button mat-icon-button (click)="startnav.toggle()">
+          <mat-icon>menu</mat-icon>
+        </button>
+        <span>Expert.ai Vis</span>
+        <span class="spacer"></span>
+        <!-- <button mat-icon-button (click)="endnav.toggle()">
         <mat-icon *ngIf="isEndNavOpen">chevron_right</mat-icon>
         <mat-icon *ngIf="!isEndNavOpen">chevron_left</mat-icon>
       </button> -->
-    </mat-toolbar>
+      </mat-toolbar>
 
-    <div class="container">
-      <div id="cy">
+      <div class="container">
+        <div id="cy">
+        </div>
       </div>
-    </div>
-    <div *ngIf="isLoading" class="spinner-container">
-      <mat-spinner [diameter]="500"></mat-spinner>
+      <div *ngIf="isLoading" class="spinner-container">
+        <mat-spinner [diameter]="500"></mat-spinner>
+      </div>
     </div>
   </mat-sidenav-content>
 
