@@ -1,6 +1,7 @@
 <span class="root" *ngIf="root">
   <!-- show or hide the children of this node -->
-  <span class="padded" *ngIf="root.children && root.children.length > 0" (click)="isShowChildren=!isShowChildren">
+  <span class="padded" *ngIf="root.children && root.children.length > 0"
+    (click)="isShowChildren=!isShowChildren; stateChanged({node: root, isShow: isShowChildren})">
     <button mat-flat-button>
       <mat-icon class="mat-icon-rtl-mirror">
         {{isShowChildren ? 'expand_more' : 'chevron_right'}}
@@ -23,7 +24,7 @@
       </span>
       <ng-template #std_li>
         <div class="p5">
-          <app-json2-tree [root]="node"> </app-json2-tree>
+          <app-json2-tree (onStateChanged)="stateChanged($event)" [root]="node"> </app-json2-tree>
         </div>
       </ng-template>
     </span>

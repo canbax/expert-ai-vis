@@ -2,7 +2,7 @@ import { Component, HostListener, OnInit } from '@angular/core';
 import { ApiClientService } from './api-client.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { CyNode, CY_STYLE, getFcoseOptions, TreeNode } from './helper';
+import { CyNode, CY_STYLE, EXPAND_COLLAPSE_FAST_OPT, getFcoseOptions, TreeNode } from './helper';
 import cytoscape from 'cytoscape';
 import fcose from 'cytoscape-fcose';
 import expandCollapse from 'cytoscape-expand-collapse';
@@ -132,12 +132,12 @@ export class AppComponent implements OnInit {
     }
 
     if (this.isPrimitiveType(o)) {
-      root.children?.push({ name: o });
+      root.children?.push({ name: o, parent: root });
       return root;
     }
 
     for (const k in o) {
-      const newNode = { name: k, children: [] };
+      const newNode = { name: k, children: [], parent: root };
       root.children?.push(newNode);
       this.json2Tree(o[k], newNode);
     }
@@ -158,6 +158,31 @@ export class AppComponent implements OnInit {
     for (const ch of root.children) {
       this.tree2CyGraph(ch, cyEl);
     }
+  }
+
+  treeStateChanged(p: { isShow: boolean, node: TreeNode }) {
+    let path: string[] = [];
+    let curr = p.node;
+    while (curr) {
+      path.push(curr.name);
+      curr = curr.parent;
+    }
+    console.log('path : ', path);
+
+    this.syncGraphFromTree(path, p.isShow);
+  }
+
+  syncGraphFromTree(path: string[], isShow: boolean) {
+    let curr = this.cy.nodes('[!parent]');
+    for (let i = path.length - 2; i > -1; i--) {
+      curr = curr.children(`[name='${path[i]}']`);
+    }
+    if (isShow) {
+      this.expandCollapseApi.expand(curr, EXPAND_COLLAPSE_FAST_OPT);
+    } else {
+      this.expandCollapseApi.collapse(curr, EXPAND_COLLAPSE_FAST_OPT);
+    }
+
   }
 
   private bindExpandCollapseExt() {

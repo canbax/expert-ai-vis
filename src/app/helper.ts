@@ -1,6 +1,7 @@
 export interface TreeNode {
   name: string;
   children?: TreeNode[];
+  parent?: TreeNode;
 }
 
 export interface CyNode {
@@ -94,3 +95,5 @@ export const CY_STYLE = [
     }
   },
 ];
+
+export const EXPAND_COLLAPSE_FAST_OPT = { layoutBy: null, fisheye: false, animate: false };

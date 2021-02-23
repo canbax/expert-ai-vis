@@ -1,33 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { TreeNode } from '../helper';
-
-
-
-const TREE_DATA: TreeNode[] = [
-  {
-    name: 'Vegetables',
-    children: [
-      {
-        name: 'Green',
-        children: [
-          { name: 'Broccoli' },
-          { name: 'Brussels sprouts' },
-        ]
-      },
-      {
-        name: 'Orange',
-        children: [
-          { name: 'Pumpkins' },
-          { name: 'Carrots' },
-        ]
-      },
-      {
-        name: 'Bean',
-        children: []
-      },
-    ]
-  },
-];
 
 @Component({
   selector: 'app-json2-tree',
@@ -39,14 +11,19 @@ export class Json2TreeComponent implements OnInit {
   @Input() root: TreeNode = { name: 'Response', children: [] };
   isShowChildren = true;
   @Input() isLastChild: boolean;
-  
+  @Output() onStateChanged = new EventEmitter<{ isShow: boolean, node: TreeNode }>();
+
   constructor() {
   }
 
   ngOnInit(): void {
-    
+
   }
 
-  
+  stateChanged(p: { isShow: boolean, node: TreeNode }) {
+    this.onStateChanged.emit(p);
+  }
+
+
 
 }

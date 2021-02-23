@@ -70,7 +70,7 @@
       </mat-expansion-panel>
 
       <div class="fit-content">
-        <app-json2-tree *ngIf="apiResponse" [root]="apiResponse"></app-json2-tree>
+        <app-json2-tree *ngIf="apiResponse" (onStateChanged)="treeStateChanged($event)" [root]="apiResponse"></app-json2-tree>
       </div>
     </mat-accordion>
 
