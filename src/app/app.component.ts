@@ -112,7 +112,7 @@ export class AppComponent implements OnInit {
         this.isLoading = false;
         if (v.ok) {
           this.apiResponse = this.json2Tree(JSON.parse(await v.text()), false);
-          this.tree2CyGraph(this.apiResponse);
+          this.tree2CyGraphWithCompounds(this.apiResponse);
           this.cy.layout(getFcoseOptions()).run();
         } else {
           this._errLogger('Status: ' + v.status);
@@ -145,7 +145,7 @@ export class AppComponent implements OnInit {
     return root;
   }
 
-  tree2CyGraph(root: TreeNode, parent?: any) {
+  tree2CyGraphWithCompounds(root: TreeNode, parent?: any) {
     if (!root) {
       return;
     }
@@ -156,7 +156,7 @@ export class AppComponent implements OnInit {
       return;
     }
     for (const ch of root.children) {
-      this.tree2CyGraph(ch, cyEl);
+      this.tree2CyGraphWithCompounds(ch, cyEl);
     }
   }
 
