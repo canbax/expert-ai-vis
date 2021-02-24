@@ -43,6 +43,9 @@ export class AppComponent implements OnInit {
     { link: 'v2/categorize/geotax/en', text: 'GeoTax' }
   ];
   currEndPoint = '';
+  isShowGraph = false;
+  isShowGraphWithEdges = true;
+  isShowNodeLabelsInGraph = false;
 
   constructor(private fb: FormBuilder, private _api: ApiClientService, private _snackBar: MatSnackBar) {
     this.tokenForm = this.fb.group({
@@ -56,6 +59,34 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.initCy();
+  }
+
+  showGraphChanged() {
+    const cyDiv = document.getElementById('cy');
+    const treeDiv = document.getElementsByTagName('app-json2-tree')[0] as HTMLElement;
+    const layoutOptions = getFcoseOptions();
+
+    if (this.isShowGraph) {
+      cyDiv.style.height = '50%';
+      treeDiv.style.height = '50%';
+      if (this.isShowGraphWithEdges) {
+        this.tree2CyGraphWithEdges(this.apiResponse);
+        layoutOptions.name = 'dagre';
+      } else {
+        this.tree2CyGraphWithCompounds(this.apiResponse);
+      }
+      this.cy.resize();
+      this.cy.layout(layoutOptions).run();
+    } else {
+      treeDiv.style.height = '100%';
+      cyDiv.style.height = '0%';
+      this.cy.remove(this.cy.$());
+      this.cy.resize();
+    }
+  }
+
+  showHideNodeLabelsInGraph() {
 
   }
 
@@ -130,11 +161,6 @@ export class AppComponent implements OnInit {
       this.isLoading = false;
       if (v.ok) {
         this.apiResponse = this.json2Tree(JSON.parse(await v.text()), false);
-        // this.tree2CyGraphWithCompounds(this.apiResponse);
-        // this.tree2CyGraphWithEdges(this.apiResponse);
-        // const opt = getFcoseOptions();
-        // opt.name = 'dagre';
-        // this.cy.layout(opt).run();
       } else {
         this._errLogger('Status: ' + v.status);
       }

@@ -7,7 +7,6 @@ export class ApiClientService {
 
   constructor() { }
 
-
   token(username: string, password: string) {
     const myHeaders = new Headers();
     myHeaders.append('Content-Type', 'application/json');

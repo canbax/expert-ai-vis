@@ -82,16 +82,20 @@
           <mat-icon>menu</mat-icon>
         </button>
         <span>Expert.ai Vis</span>
-        <span class="spacer"></span>
-        <!-- <button mat-icon-button (click)="endnav.toggle()">
-        <mat-icon *ngIf="isEndNavOpen">chevron_right</mat-icon>
-        <mat-icon *ngIf="!isEndNavOpen">chevron_left</mat-icon>
-      </button> -->
+        <mat-checkbox class="m5" [(ngModel)]="isShowGraph" (change)="showGraphChanged()" name="show-graph">Show graph
+        </mat-checkbox>
+        <mat-checkbox class="m5" *ngIf="isShowGraph" [(ngModel)]="isShowGraphWithEdges" (change)="showGraphChanged()"
+          name="show-graph-w-edge">Graph with Edges
+        </mat-checkbox>
+        <mat-checkbox class="m5" *ngIf="isShowGraph" [(ngModel)]="isShowNodeLabelsInGraph"
+          (change)="showHideNodeLabelsInGraph()" name="show-graph-node-label">Show Node Labels in the Graph
+        </mat-checkbox>
       </mat-toolbar>
 
       <div class="container">
         <app-json2-tree *ngIf="apiResponse" (onStateChanged)="treeStateChanged($event)" [root]="apiResponse">
         </app-json2-tree>
+        <div id="cy"></div>
       </div>
       <div *ngIf="isLoading" class="spinner-container">
         <mat-spinner [diameter]="500"></mat-spinner>
