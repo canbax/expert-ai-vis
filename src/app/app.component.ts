@@ -6,6 +6,8 @@ import { CyNode, CY_STYLE, EXPAND_COLLAPSE_FAST_OPT, getFcoseOptions, TreeNode }
 import cytoscape from 'cytoscape';
 import fcose from 'cytoscape-fcose';
 import expandCollapse from 'cytoscape-expand-collapse';
+import dagre from 'cytoscape-dagre';
+import klay from 'cytoscape-klay';
 
 @Component({
   selector: 'app-root',
@@ -43,7 +45,13 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
+  }
+
+  private initCy() {
     cytoscape.use(fcose);
+    cytoscape.use(dagre);
+    cytoscape.use(klay);
     //register expand-collapse extension
     expandCollapse(cytoscape);
     this.cy = cytoscape({
@@ -112,8 +120,11 @@ export class AppComponent implements OnInit {
         this.isLoading = false;
         if (v.ok) {
           this.apiResponse = this.json2Tree(JSON.parse(await v.text()), false);
-          this.tree2CyGraphWithCompounds(this.apiResponse);
-          this.cy.layout(getFcoseOptions()).run();
+          // this.tree2CyGraphWithCompounds(this.apiResponse);
+          // this.tree2CyGraphWithEdges(this.apiResponse);
+          // const opt = getFcoseOptions();
+          // opt.name = 'dagre';
+          // this.cy.layout(opt).run();
         } else {
           this._errLogger('Status: ' + v.status);
         }
@@ -160,6 +171,24 @@ export class AppComponent implements OnInit {
     }
   }
 
+  tree2CyGraphWithEdges(root: TreeNode, parent?: any) {
+    if (!root) {
+      return;
+    }
+    const p = parent ? parent.id() : null;
+    const n: CyNode = { data: { name: root.name }, group: 'nodes' };
+    const cyEl = this.cy.add(n);
+    if (p) {
+      this.cy.add({ data: { source: p, target: cyEl.id() }, group: 'edges' });
+    }
+    if (!root.children) {
+      return;
+    }
+    for (const ch of root.children) {
+      this.tree2CyGraphWithEdges(ch, cyEl);
+    }
+  }
+
   treeStateChanged(p: { isShow: boolean, node: TreeNode }) {
     let path: string[] = [];
     let curr = p.node;
@@ -169,7 +198,7 @@ export class AppComponent implements OnInit {
     }
     console.log('path : ', path);
 
-    this.syncGraphFromTree(path, p.isShow);
+    // this.syncGraphFromTree(path, p.isShow);
   }
 
   syncGraphFromTree(path: string[], isShow: boolean) {

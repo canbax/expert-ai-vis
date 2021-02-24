@@ -68,10 +68,6 @@
           <button class="w100 m5" mat-raised-button color="primary" (click)="queryApi()">Query API</button>
         </div>
       </mat-expansion-panel>
-
-      <div class="fit-content">
-        <app-json2-tree *ngIf="apiResponse" (onStateChanged)="treeStateChanged($event)" [root]="apiResponse"></app-json2-tree>
-      </div>
     </mat-accordion>
 
   </mat-sidenav>
@@ -90,16 +86,12 @@
       </mat-toolbar>
 
       <div class="container">
-        <div id="cy">
-        </div>
+        <app-json2-tree *ngIf="apiResponse" (onStateChanged)="treeStateChanged($event)" [root]="apiResponse">
+        </app-json2-tree>
       </div>
       <div *ngIf="isLoading" class="spinner-container">
         <mat-spinner [diameter]="500"></mat-spinner>
       </div>
     </div>
   </mat-sidenav-content>
-
-  <!-- <mat-sidenav class="end-sidenav" #endnav [(opened)]="isEndNavOpen" mode="side" position="end">
-    End content
-  </mat-sidenav> -->
 </mat-sidenav-container>
