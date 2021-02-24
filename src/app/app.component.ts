@@ -32,6 +32,17 @@ export class AppComponent implements OnInit {
   expandCollapseApi: any;
   isRandomizedLayout: boolean = true;
   viewUtils: any;
+  apiFunctions = [
+    { link: 'v2/analyze/standard/en', text: 'Full' },
+    { link: 'v2/analyze/standard/en/disambiguation', text: 'Disambiguation' },
+    { link: 'v2/analyze/standard/en/entities', text: 'Entities' },
+    { link: 'v2/analyze/standard/en/relevants', text: 'Relevants' },
+    { link: 'v2/analyze/standard/en/relations', text: 'Relations' },
+    { link: 'v2/analyze/standard/en/sentiment', text: 'Sentiment' },
+    { link: 'v2/categorize/iptc/en', text: 'IPTC' },
+    { link: 'v2/categorize/geotax/en', text: 'GeoTax' }
+  ];
+  currEndPoint = '';
 
   constructor(private fb: FormBuilder, private _api: ApiClientService, private _snackBar: MatSnackBar) {
     this.tokenForm = this.fb.group({
@@ -115,21 +126,19 @@ export class AppComponent implements OnInit {
     this.isLoading = true;
     this.apiResponse = null;
     this.saveText2Query();
-    if (this.isFullDocAnalysis) {
-      this._api.analyzeFull(this.txt2Analyze, this.token).then(async (v) => {
-        this.isLoading = false;
-        if (v.ok) {
-          this.apiResponse = this.json2Tree(JSON.parse(await v.text()), false);
-          // this.tree2CyGraphWithCompounds(this.apiResponse);
-          // this.tree2CyGraphWithEdges(this.apiResponse);
-          // const opt = getFcoseOptions();
-          // opt.name = 'dagre';
-          // this.cy.layout(opt).run();
-        } else {
-          this._errLogger('Status: ' + v.status);
-        }
-      }, this._errLogger).catch(this._errLogger);
-    }
+    this._api.callEndpoint(this.currEndPoint, this.txt2Analyze, this.token).then(async (v) => {
+      this.isLoading = false;
+      if (v.ok) {
+        this.apiResponse = this.json2Tree(JSON.parse(await v.text()), false);
+        // this.tree2CyGraphWithCompounds(this.apiResponse);
+        // this.tree2CyGraphWithEdges(this.apiResponse);
+        // const opt = getFcoseOptions();
+        // opt.name = 'dagre';
+        // this.cy.layout(opt).run();
+      } else {
+        this._errLogger('Status: ' + v.status);
+      }
+    }, this._errLogger).catch(this._errLogger);
   }
 
   isPrimitiveType(o: any): boolean {
@@ -139,7 +148,7 @@ export class AppComponent implements OnInit {
 
   json2Tree(o: any, root: TreeNode | false): TreeNode {
     if (!root) {
-      root = { name: 'Response', children: [] };
+      root = { name: this.currEndPoint, children: [] };
     }
 
     if (this.isPrimitiveType(o)) {

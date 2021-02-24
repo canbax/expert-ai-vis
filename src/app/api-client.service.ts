@@ -23,6 +23,23 @@ export class ApiClientService {
     return fetch('https://developer.expert.ai/oauth2/token', requestOptions);
   }
 
+  callEndpoint(endpoint: string, txt: string, token: string) {
+    const myHeaders = new Headers();
+    myHeaders.append('Authorization', 'Bearer ' + token);
+    myHeaders.append('Content-Type', 'application/json');
+
+    const raw = JSON.stringify({ document: { text: txt } });
+
+    const requestOptions: RequestInit = {
+      method: 'POST',
+      headers: myHeaders,
+      body: raw,
+      redirect: 'follow'
+    };
+
+    return fetch('https://nlapi.expert.ai/' + endpoint, requestOptions);
+  }
+
   analyzeFull(txt: string, token: string) {
     const myHeaders = new Headers();
     myHeaders.append('Authorization', 'Bearer ' + token);
@@ -37,7 +54,7 @@ export class ApiClientService {
       redirect: 'follow'
     };
 
-    return fetch('https://nlapi.expert.ai/v2/analyze/standard/en', requestOptions);
+    return fetch('https://nlapi.expert.ai/v2/analyze/standard/en/disambiguation', requestOptions);
   }
 
   analyzeDisambiguation(txt: string, token: string) {

@@ -54,15 +54,19 @@
       <mat-expansion-panel>
         <mat-expansion-panel-header>
           <mat-panel-title>
-            Document Analysis & Clasification
+            Expert.ai API
           </mat-panel-title>
-          <mat-panel-description>
-
-          </mat-panel-description>
         </mat-expansion-panel-header>
         <div>
           <div>
-            <mat-checkbox [(ngModel)]="isFullDocAnalysis">Full document analysis</mat-checkbox>
+            <mat-form-field>
+              <mat-label>End point to call</mat-label>
+              <mat-select [(value)]="currEndPoint">
+                <mat-option *ngFor="let o of apiFunctions" [value]="o.link">
+                  {{o.text}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
           </div>
 
           <button class="w100 m5" mat-raised-button color="primary" (click)="queryApi()">Query API</button>
