@@ -236,7 +236,15 @@ export class AppComponent implements OnInit {
     // this.syncGraphFromTree(path, p.isShow);
   }
 
-  syncGraphFromTree(path: string[], isShow: boolean) {
+  syncGraphFromTree(path: string[], p: { isShow: boolean, node: TreeNode }) {
+    if (this.isShowGraphWithEdges) {
+      this.syncGraphWithEdgesFromTree(path, p);
+    } else {
+      this.syncCompoundGraphFromTree(path, p.isShow);
+    }
+  }
+
+  syncCompoundGraphFromTree(path: string[], isShow: boolean) {
     let curr = this.cy.nodes('[!parent]');
     for (let i = path.length - 2; i > -1; i--) {
       curr = curr.children(`[name='${path[i]}']`);
@@ -246,7 +254,18 @@ export class AppComponent implements OnInit {
     } else {
       this.expandCollapseApi.collapse(curr, EXPAND_COLLAPSE_FAST_OPT);
     }
+  }
 
+  syncGraphWithEdgesFromTree(path: string[], p: { isShow: boolean, node: TreeNode }) {
+    let curr = this.cy.nodes('[!parent]');
+    for (let i = path.length - 2; i > -1; i--) {
+      curr = curr.children(`[name='${path[i]}']`);
+    }
+    if (p.isShow) {
+      this.tree2CyGraphWithEdges(p.node, p.node.parent);
+    } else {
+      // curr.
+    }
   }
 
   private bindExpandCollapseExt() {
